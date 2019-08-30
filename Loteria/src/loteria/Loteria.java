@@ -23,7 +23,16 @@ public class Loteria {
             int num = -1;
             while (num == -1) {
                 num = capNum(in, i);
+                for (int j = 0; j < i ; j++) {
+                    if (valores[j] == num) {
+                       num = -1;
+//                        break;
+                    }
+
+                }
             }
+            valores[i] = num;
+            imprimeVetor(valores);
         }
     }
 
@@ -41,7 +50,7 @@ public class Loteria {
 
     public static void imprimeVetor(int[] vet) {
         for (int i = 0; i < vet.length; i++) {
-            System.out.print(vet[i]+" " );    
+            System.out.print(vet[i] + " ");
         }
         System.out.println("");
     }
