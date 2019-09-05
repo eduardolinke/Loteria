@@ -42,14 +42,16 @@ public class Loteria {
 
         }
         Random r = new Random();
-
         int[] bolas = new int[]{0, 0, 0, 0, 0, 0};
         for (int i = 0; i < 6; i++) {
-            int bola = (r.nextInt(60) + 1);
-            bolas [i] = bola;
-            imprimeVetor(bolas);
+            int bola = (r.nextInt(60)+1);
+            do {
+            }while(bola == -1);
+            }
+         /*   bolas [i] = bola;
+            imprimeVetor(bolas);*/
 
-        }
+        
         //  System.out.println(r.nextInt(10));
 
     }
