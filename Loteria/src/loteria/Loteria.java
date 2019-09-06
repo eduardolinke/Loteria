@@ -22,7 +22,7 @@ public class Loteria {
 //       valores2[4] = 0;
 //       valores2[5] = 0;
 //       
-
+//Pedir numeros para o usuario
         Scanner in = new Scanner(System.in);
         System.out.println("Digite 6 Números");
         for (int i = 0; i < 6; i++) {
@@ -39,21 +39,43 @@ public class Loteria {
             }
             valores[i] = num;
             imprimeVetor(valores);
-
+//sortear os numeros aleatoriamente
         }
+        
         Random r = new Random();
         int[] bolas = new int[]{0, 0, 0, 0, 0, 0};
         for (int i = 0; i < 6; i++) {
-            int bola = (r.nextInt(60)+1);
+            //     int bola = (r.nextInt(60)+1);
+            int bola = -1;
+            //int bolas = 1;
             do {
-            }while(bola == -1);
+                for (int j = 0; j < i; j++) {
+                    if (bolas[j] == bola) {
+                        bola = -1;
+                        break;
+
+                    }
+
+                }
+            } while (bola == -1);
+            bolas[i] = bola;
+            imprimeVetor(bolas);
+            //Compara os resultados
+        }
+        int bolao = 0;
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                if (bolas[i] == valores[j]) {
+                    bolao++;
+                    System.out.println("voce acertou a quantidade de " + bolao);    
+                }
             }
-         /*   bolas [i] = bola;
+
+        }
+        /*   bolas [i] = bola;
             imprimeVetor(bolas);*/
 
-        
         //  System.out.println(r.nextInt(10));
-
     }
 
     public static int capNum(Scanner in, int i) {
